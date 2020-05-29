@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoodTrackerFirst" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a9k-mO-yiq">
+                                <rect key="frame" x="0.0" y="64" width="414" height="552"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJx-xu-NVT">
+                                        <rect key="frame" x="164" y="0.0" width="86.5" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="XQ7-42-1vg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter miss name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKm-bq-AYj">
+                                        <rect key="frame" x="0.0" y="43" width="414" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageOK" translatesAutoresizingMaskIntoConstraints="NO" id="72D-cK-skp">
+                                        <rect key="frame" x="0.0" y="86" width="414" height="414"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="72D-cK-skp" secondAttribute="height" multiplier="1:1" id="j8c-CO-P91"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="hvg-JB-QUG" appends="YES" id="ub8-aL-daA"/>
+                                        </connections>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qoq-Np-1bj" customClass="RatingControl" customModule="FoodTrackerFirst" customModuleProvider="target">
+                                        <rect key="frame" x="81" y="508" width="252" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="gwx-vH-oml"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Qoq-Np-1bj" firstAttribute="top" secondItem="72D-cK-skp" secondAttribute="bottom" constant="8" id="7Yv-SP-LUe"/>
+                                    <constraint firstItem="sKm-bq-AYj" firstAttribute="leading" secondItem="a9k-mO-yiq" secondAttribute="leading" id="TBG-Io-VED"/>
+                                    <constraint firstItem="sKm-bq-AYj" firstAttribute="height" secondItem="WJx-xu-NVT" secondAttribute="height" id="oza-9d-96n"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="a9k-mO-yiq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="KYA-M5-JCj"/>
+                            <constraint firstItem="a9k-mO-yiq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gge-xM-IHS"/>
+                            <constraint firstAttribute="trailing" secondItem="a9k-mO-yiq" secondAttribute="trailing" id="wmG-mS-nvE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mealNameLabel" destination="WJx-xu-NVT" id="aGX-Ai-aeS"/>
+                        <outlet property="nameTextField" destination="sKm-bq-AYj" id="Gkt-xW-4Sy"/>
+                        <outlet property="photoImageView" destination="72D-cK-skp" id="Sus-Rj-CYT"/>
+                        <outlet property="ratingControl" destination="Qoq-Np-1bj" id="dBO-Le-HmU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hvg-JB-QUG">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="LlZ-48-CLB"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ImageOK" width="480" height="320"/>
+    </resources>
+</document>
